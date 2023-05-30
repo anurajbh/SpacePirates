@@ -2,3 +2,4 @@
 * text=auto
 *.pdb filter=lfs diff=lfs merge=lfs -text
 *.ucas filter=lfs diff=lfs merge=lfs -text
+2cc881720a6bf7e80009b47dc9ce551177a429504fbecd88268de07108c13e53 filter=lfs diff=lfs merge=lfs -text
