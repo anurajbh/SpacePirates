@@ -3,6 +3,7 @@
 
 #include "StarshipCharacter.h"
 #include "Camera/CameraComponent.h"
+#include "Components/InputComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "GameFramework/FloatingPawnMovement.h"
 // Sets default values
@@ -23,7 +24,7 @@ AStarshipCharacter::AStarshipCharacter()
 	}
 
 	//Create Floating Pawn Movement Component
-	PlayerFloatingPawnMovement = CreateDefaultSubobject<UFloatingPawnMovement>(TEXT("Player Floating Pawn Movement"));
+	//PlayerFloatingPawnMovement = CreateDefaultSubobject<UFloatingPawnMovement>(TEXT("Player Floating Pawn Movement"));
 }
 
 // Called when the game starts or when spawned
@@ -45,22 +46,24 @@ void AStarshipCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputC
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+	UE_LOG(LogTemp, Warning, TEXT("Set up input"));
 	//set up gameplay key bindings
 	check(PlayerInputComponent);
 
 	//Movement
-	PlayerInputComponent->BindAxis("Move Forward / Backward", this, &AStarshipCharacter::MoveForward);
-	PlayerInputComponent->BindAxis("Move Right / Left", this, &AStarshipCharacter::MoveRight);
+	PlayerInputComponent->BindAxis("MoveForward", this, &AStarshipCharacter::MoveForward);
+	PlayerInputComponent->BindAxis("MoveRight", this, &AStarshipCharacter::MoveRight);
 	PlayerInputComponent->BindAxis("MoveUp", this, &AStarshipCharacter::MoveUp);
 
 	//Rotation
-	PlayerInputComponent->BindAxis("Turn Right / Left Mouse", this, &APawn::AddControllerYawInput);
-	PlayerInputComponent->BindAxis("Look Up / Down Mouse", this, &APawn::AddControllerPitchInput);
+	PlayerInputComponent->BindAxis("TurnRight", this, &APawn::AddControllerYawInput);
+	PlayerInputComponent->BindAxis("LookUp", this, &APawn::AddControllerPitchInput);
 	PlayerInputComponent->BindAxis("Roll", this, &APawn::AddControllerRollInput);
 }
 
 void AStarshipCharacter::MoveForward(float Value)
 {
+	UE_LOG(LogTemp, Warning, TEXT("Moving forward"));
 	if (Value != 0.0f)
 	{
 		// add movement in that direction
@@ -70,6 +73,7 @@ void AStarshipCharacter::MoveForward(float Value)
 
 void AStarshipCharacter::MoveRight(float Value)
 {
+	UE_LOG(LogTemp, Warning, TEXT("Moving right"));
 	if (Value != 0.0f)
 	{
 		// add movement in that direction
@@ -80,6 +84,7 @@ void AStarshipCharacter::MoveRight(float Value)
 
 void AStarshipCharacter::MoveUp(float Value)
 {
+	UE_LOG(LogTemp, Warning, TEXT("Moving up"));
 	if (Value != 0.0f)
 	{
 		// add movement in that direction
