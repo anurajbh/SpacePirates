@@ -24,8 +24,8 @@ public:
 		class USpringArmComponent* PlayerSpringArm = nullptr;
 
 	//Floating Pawn Component
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Movement")
-		class UFloatingPawnMovement* PlayerFloatingPawnMovement = nullptr;
+	//UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Movement")
+		//class UFloatingPawnMovement* PlayerFloatingPawnMovement = nullptr;
 
 	//Floating Pawn Component
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Movement")
