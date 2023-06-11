@@ -40,5 +40,9 @@ void UHealthComponent::TakeDamage(AActor* DamagedActor, float Damage, const clas
 	}
 	//subtract health
 	m_Health = FMath::Clamp(m_Health - Damage, 0.0f, m_DefaultHeath);
+	if (m_Health <= 0.0f)
+	{
+		//kill player
+	}
 }
 
