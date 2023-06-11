@@ -32,6 +32,10 @@
 				"Android",
 				"HoloLens"
 			]
+		},
+		{
+			"Name": "OSC",
+			"Enabled": true
 		}
 	]
 }
