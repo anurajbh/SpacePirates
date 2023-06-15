@@ -51,13 +51,13 @@ void AStarshipCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputC
 	check(PlayerInputComponent);
 
 	//Movement
-	PlayerInputComponent->BindAxis("MoveForward", this, &AStarshipCharacter::MoveForward);
-	PlayerInputComponent->BindAxis("MoveRight", this, &AStarshipCharacter::MoveRight);
+	PlayerInputComponent->BindAxis("Move Forward / Backward", this, &AStarshipCharacter::MoveForward);
+	PlayerInputComponent->BindAxis("Move Right / Left", this, &AStarshipCharacter::MoveRight);
 	PlayerInputComponent->BindAxis("MoveUp", this, &AStarshipCharacter::MoveUp);
 
 	//Rotation
-	PlayerInputComponent->BindAxis("TurnRight", this, &APawn::AddControllerYawInput);
-	PlayerInputComponent->BindAxis("LookUp", this, &APawn::AddControllerPitchInput);
+	PlayerInputComponent->BindAxis("Turn Right / Left Mouse", this, &APawn::AddControllerYawInput);
+	PlayerInputComponent->BindAxis("Look Up / Down Mouse", this, &APawn::AddControllerPitchInput);
 	PlayerInputComponent->BindAxis("Roll", this, &APawn::AddControllerRollInput);
 }
 
