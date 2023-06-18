@@ -26,7 +26,7 @@ public:
 		float m_DefaultHeath;
 
 	//current health
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Health Stats")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Health Stats")
 		float m_Health;
 
 	//damage function
